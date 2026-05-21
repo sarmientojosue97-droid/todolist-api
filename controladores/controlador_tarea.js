@@ -30,7 +30,7 @@ exports.actualizar_tarea = async (req, res) => {
         req.params.id,
         {
             titulo: req.body.titulo,
-            decripcion: req.body.descripcion,
+            descripcion: req.body.descripcion,
             completada: req.body.completada
         },
         {new: true}
@@ -51,5 +51,5 @@ exports.eliminar_tarea = async (req, res) => {
         return res.status(404).json({error: 'tarea no encontrada'});
     }
 
-    res.json({mensaje: 'tarea eliminada correctamente, id: req.params.id'});
+    res.json({mensaje: `tarea eliminada correctamente, id: ${req.params.id}`});
 };

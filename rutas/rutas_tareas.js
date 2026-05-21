@@ -4,7 +4,7 @@ const router = express.Router();
 const controlador = require('../controladores/controlador_tarea');
 
 router.get('/', controlador.obtener_tareas);
-router.get('/', controlador.crear_tarea);
+router.post('/', controlador.crear_tarea);
 
 router.get('/:id', controlador.obtener_tarea);
 router.put('/:id', controlador.actualizar_tarea);

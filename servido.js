@@ -30,7 +30,7 @@ app.use((req, res) => {
 });
 
 const PUERTO = process.env.PORT || 4000;
-app.listen.log(PUERTO, () => {
-    console.log('corriendo en htpp://localhost:${PUERTO}');
-    console.log('api: http://localhost:${PUERTO}/api/tareas')
+app.listen(PUERTO, () => {
+    console.log(`corriendo en htpp://localhost:${PUERTO}`);
+    console.log(`api: http://localhost:${PUERTO}/api/tareas`);
 });
