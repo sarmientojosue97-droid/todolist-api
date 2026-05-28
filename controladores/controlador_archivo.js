@@ -42,6 +42,19 @@ exports.subir_archivo = async (req, res) => {
     );
   }
 
+  const archivo_existente = await Archivo.findOne({nombre_original: req.file.originalname});
+
+  if(archivo_existente){
+    if(fs.existsSync(req.file.path)){
+      fs.unlinkSync(req.file.path);
+    }
+    return respuesta.error(res, 409, `Ya existe un archivo llamado "${req.file.originalname}"`,
+    {
+      self: '/api/archivos/subir',
+      existente: `/api/archivos/${archivo_existente._id}`
+    });
+  }
+
   console.log('Archivo recibido:', req.file);
 
   const archivo_nuevo = new Archivo({

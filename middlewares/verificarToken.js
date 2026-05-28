@@ -3,24 +3,22 @@ const respuesta = require('./respuesta');
 
 const verificarToken = (req, res, next) => {
 
+  let token = null;
+
   const header_auth = req.headers['authorization'];
 
-  if (!header_auth) {
-    return respuesta.error(
-      res,
-      401,
-      'Acceso denegado. No se proporcionó token de autenticación.',
-      { login: '/api/auth/google' }
-    );
+  if (header_auth) {
+    token = header_auth.split(' ')[1];
   }
-
-  const token = header_auth.split(' ')[1];
+  if(!token && req.query.token){
+    token = req.query.token;
+  }
 
   if (!token) {
     return respuesta.error(
       res,
       401,
-      'Formato de token inválido. Usa: Authorization: Bearer TU_TOKEN',
+      'Acceso denegado. No se proporcionó token de autenticación.',
       { login: '/api/auth/google' }
     );
   }

@@ -1,4 +1,4 @@
-const crypto = require('crypto');   // viene con Node, no instalar
+const crypto = require('crypto');
 const Tarea = require('../modelos/tarea');
 const respuesta = require('../middlewares/respuesta');
 
@@ -73,6 +73,18 @@ exports.crear_tarea = async (req, res) => {
 
   if (!req.body.titulo || req.body.titulo.trim() === '') {
     return respuesta.error( res, 400, 'El título es obligatorio', { self: '/api/tareas' } );
+  }
+
+  const titulo_limpio = req.body.titulo.trim();
+
+  const tarea_existente = await Tarea.findOne({titulo: titulo_limpio});
+  
+  if(tarea_existente){
+    return respuesta.error(res, 409, `Ya existe una tarea con el título "${titulo_limpio}"`,
+    {
+      self: '/api/tareas',
+      existente: `/api/tareas/${tarea_existente._id}`
+    });
   }
 
   const tarea_nueva = new Tarea({
