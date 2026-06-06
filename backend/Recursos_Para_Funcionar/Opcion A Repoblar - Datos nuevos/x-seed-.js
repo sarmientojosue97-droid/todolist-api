@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const Tarea = require('./modelos/tarea');
+const Tarea = require('../../modelos/tarea');
 
 async function poblar() {
   console.log('Conectando a MongoDB...');

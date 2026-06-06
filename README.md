@@ -1,9 +1,6 @@
 
-### Requisito Previo
-* Instalar y ejecutar **MongoDB para escritorio**
+### Cada carpeta, el backend y fronted tiene sus `README con los paso a seguir`
 
-### para llenar de datos en tareas ejecutar en el la carpeta backend
-* x-seed-.js
 
 ### Backend
 npm run devstart

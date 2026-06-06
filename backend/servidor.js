@@ -5,6 +5,8 @@ const cors = require('cors');
 const path = require('path');
 const session = require('express-session');
 const passport = require('./config/passport');
+const https = require('https');
+const fs = require('fs');
 
 const rutas_tareas = require('./rutas/rutas_tareas');
 const rutas_archivos = require('./rutas/rutas_archivos');
@@ -18,7 +20,7 @@ bd.on('error', console.error.bind(console, ' Error MongoDB:'));
 bd.once('open', () => console.log(' Conectado a MongoDB'));
 
 app.use(cors({
-  origin: process.env.URL_FRONTEND || 'http://localhost:5173',
+  origin: process.env.URL_FRONTEND || 'https://localhost:5173',
   credentials: true
 }));
 app.use(express.json());
@@ -71,9 +73,18 @@ app.use((req, res) => {
 
 
 const PUERTO = process.env.PORT || 4000;
-app.listen(PUERTO, () => {
-  console.log(`Servidor en http://localhost:${PUERTO}`);
-  console.log(`Login: http://localhost:${PUERTO}/api/auth/google`);
-  console.log(`Tareas: http://localhost:${PUERTO}/api/tareas`);
-  console.log(`Archivos: http://localhost:${PUERTO}/api/archivos`);
+
+const ruta_llave = path.join(__dirname, 'llave.pem');
+const ruta_certificado = path.join(__dirname, 'certificado.pem');
+
+const opciones_https = {
+  key: fs.readFileSync(ruta_llave),
+  cert: fs.readFileSync(ruta_certificado)
+};
+
+https.createServer(opciones_https, app).listen(PUERTO, () => {
+  console.log(`Servidor seguro en https://localhost:${PUERTO}`);
+  console.log(`Login: https://localhost:${PUERTO}/api/auth/google`);
+  console.log(`Tareas: https://localhost:${PUERTO}/api/tareas`);
+  console.log(`Archivos: https://localhost:${PUERTO}/api/archivos`);
 });

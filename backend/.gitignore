@@ -10,3 +10,7 @@ tmp/
 temp/
 .vscode/
 nodemon.json
+
+# Certificados SSL Locales
+llave.pem
+certificado.pem

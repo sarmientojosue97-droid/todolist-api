@@ -13,7 +13,7 @@ exports.google_callback = (req, res) => {
     process.env.JWT_SECRET,
     { expiresIn: process.env.JWT_EXPIRES_IN || '7d' }
   );
-  const url_frontend = process.env.URL_FRONTEND || 'http://localhost:5173';
+  const url_frontend = process.env.URL_FRONTEND || 'https://localhost:5173';
   res.redirect(`${url_frontend}/auth/callback?token=${token}`);
 };
 

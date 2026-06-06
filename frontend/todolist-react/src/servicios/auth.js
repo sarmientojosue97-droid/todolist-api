@@ -34,7 +34,7 @@ export const obtenerUsuario = () => {
 };
 
 export const loginConGoogle = () => {
-    window.location.href = 'http://localhost:4000/api/auth/google';
+    window.location.href = 'https://localhost:4000/api/auth/google';
 };
 
 export const logout = () => {

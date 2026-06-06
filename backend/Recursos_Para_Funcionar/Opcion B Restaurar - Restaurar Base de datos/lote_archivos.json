@@ -1,0 +1,22 @@
+[
+  {
+    "_id":             { "$oid": "6a237381dc2c91ef806bff41" },
+    "nombre_original": "p1.txt",
+    "nombre_guardado": "1780708225933-p1.txt",
+    "tipo_mime":       "text/plain",
+    "tamanio":         0,
+    "ruta":            "1780708225933-p1.txt",
+    "fecha_subida":    { "$date": "2026-06-05T21:56:52.907Z" },
+    "__v": 0
+  },
+  {
+    "_id":             { "$oid": "6a237384dc2c91ef806bff42" },
+    "nombre_original": "p2.txt",
+    "nombre_guardado": "1780708228109-p2.txt",
+    "tipo_mime":       "text/plain",
+    "tamanio":         0,
+    "ruta":            "1780708228109-p2.txt",
+    "fecha_subida":    { "$date": "2026-06-06T01:10:28.112Z" },
+    "__v": 0
+  }
+]

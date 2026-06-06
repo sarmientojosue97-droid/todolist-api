@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Certificados SSL Locales
+llave.pem
+certificado.pem

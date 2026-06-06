@@ -62,7 +62,7 @@ exports.subir_archivo = async (req, res) => {
     nombre_guardado: req.file.filename, 
     tipo_mime: req.file.mimetype,
     tamanio: req.file.size,
-    ruta: req.file.path 
+    ruta: req.file.filename
   });
 
   const archivo_guardado = await archivo_nuevo.save();
@@ -85,7 +85,7 @@ exports.descargar_archivo = async (req, res) => {
       { self: `/api/archivos/${req.params.id}` });
   }
 
-  const ruta_completa = path.resolve(archivo.ruta);
+    const ruta_completa = path.join(carpeta_uploads, archivo.nombre_guardado);
   if (!fs.existsSync(ruta_completa)) {
     return respuesta.error(res, 404,
       'El archivo existe en la BD pero no se encontró en el servidor',
@@ -101,7 +101,7 @@ exports.eliminar_archivo = async (req, res) => {
       { self: `/api/archivos/${req.params.id}` });
   }
 
-  const ruta_completa = path.resolve(archivo.ruta);
+  const ruta_completa = path.join(carpeta_uploads, archivo.nombre_guardado);
   if (fs.existsSync(ruta_completa)) {
     fs.unlinkSync(ruta_completa);
   }

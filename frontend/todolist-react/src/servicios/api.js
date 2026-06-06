@@ -4,7 +4,7 @@ import { obtenerToken, eliminarToken } from './auth';
 const cache_etags = {};
 
 const api = axios.create({
-    baseURL: 'http://localhost:4000',
+    baseURL: 'https://localhost:4000',
     headers: {'Content-Type': 'application/json'}
 });
 

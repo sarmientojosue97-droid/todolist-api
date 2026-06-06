@@ -30,7 +30,7 @@ export const subirArchivo = async (archivo, onProgreso) => {
 export const descargarArchivo = (id) => {
     const token = localStorage.getItem('todolist_token');
     window.open(
-        `http://localhost:4000/api/archivos/${id}/descargar?token=${token}`,
+        `https://localhost:4000/api/archivos/${id}/descargar?token=${token}`,
         '_blank'
     );
 };
