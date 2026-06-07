@@ -5,7 +5,7 @@ const cache_etags = {};
 const cache_datos = {};
 
 const api = axios.create({
-    baseURL: 'https://localhost:4000',
+    baseURL: '',
     headers: {'Content-Type': 'application/json'}
 });
 

@@ -151,6 +151,7 @@ mongoimport --db=todolist_v2_db --collection=archivos  --file="Recursos_Para_Fun
 
 ```bash
 npm run devstart
+npm run start
 ```
 
 **Salida esperada en terminal:**
