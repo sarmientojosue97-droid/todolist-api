@@ -5,7 +5,6 @@
 - React
 - Vite
 ---
----
 
 ## Instalacon paso a paso
 
@@ -24,6 +23,9 @@ Los certificados son para HTTPS en localhost y para que tenga usted sus propios 
 openssl req -x509 -newkey rsa:4000 -keyout llave.pem -out certificado.pem -sha256 -days 365 -nodes
 
 ```
+
+> o puedes copiar el ` llave.pem`  y ` certificado.pem`, que hiso para el ` Backend` 
+
 ### Paso 4: Levantar el servidor de desarrollo
 
 npm run dev

@@ -1,5 +1,43 @@
 #  todos los pasos para que funcione el Backend
 
+> Es muy importante `Descargar` e `Instalar` 3 programas para que funcione mi TodoList
+
+> y esos 3 programas se deben `Agregar` al `PATH`, ya que se usara el CMD para instalar
+
+> el `1ºprograma` y `2ºprograma`, son de `mongoDB`
+
+> el `1ºPrograma`, sirve para instalar todo lo que nesesita la base para su correcto funcionamiento, aqui tube un `pronblema de compatibilidad` y use la vercion `mongodb-windows-x86_64-5.0.33-signed`
+```bash
+https://www.mongodb.com/try/download/community
+```
+> el `2ºPrograma`, son `MongoDB Command Line Database Tools` sirve para descargar un `paquete ZIP con 3 archivos` que te permiten restaurar los datos de pruebas, mediante comandos  , `mongoexport.exe`, `mongoimport.exe`, `mongorestore.exe`
+
+> despues de descomprimir esos archivos con `.exe`, deben `copiarse` a la `carpeta donde se instalo mongoDB`, en la carpeta `bin`, en mi caso fue en `C:\Program Files\MongoDB\Server\5.0\bin`
+```bash
+https://www.mongodb.com/try/download/database-tools
+
+o mas especifico
+
+https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.17.0.zip
+```
+> el `3ºPrograma` es para tener OpenSSL `instalado`, en micaso descarge `Win64OpenSSL-4_0_0.exe`
+```bash
+https://slproweb.com/products/Win32OpenSSL.html
+```
+
+  ### Para que el sistema reconozca los comandos de Mongo y de OpenSSL desde cualquier terminal, debe agregar las rutas de instalación a las Variables de Entorno de Windows:
+
+1. Presione la tecla Windows, escriba "Variables de entorno" y abra "Editar las variables de entorno del sistema".
+2. Haga clic en el botón Variables de entorno.
+3. En la sección Variables del sistema, busque la variable llamada Path y selecciónela, luego haga clic en Editar.
+4. Haga clic en Nuevo y agregue las siguientes dos rutas exactas:
+   * `C:\Program Files\MongoDB\Server\5.0\bin` (Aquí estarán MongoDB y las Database Tools)
+   * `C:\Program Files\OpenSSL-Win64\bin` (Ruta por defecto de OpenSSL)
+5. Haga clic en Aceptar en todas las ventanas para guardar los cambios.
+
+
+---
+
 # Tecnologias
 
 - Node.js + Express

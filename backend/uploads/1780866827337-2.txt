@@ -1,0 +1,42 @@
+﻿En esta misma aplicación, además
+de del todolist ahora tienes Drive.
+
+
+O sea, si tú te fijas en tu menú,
+tienes dos cosas. 
+
+Tienes tu todo list y puedes tener tu drive
+
+
+La primera es mejorar lo que ya
+hemos hecho, que se vea desde React.
+
+
+Y el Drive, mínimamente el backend.
+
+
+Puedo subir archivos, bajar
+archivos, eliminar archivos.
+
+
+¿Qué es lo que puedes hacer?
+
+
+En el Drive puedes listar los
+archivos que tienes en tu Drive.
+
+
+Puedes subir un nuevo
+archivo, puedes bajar un archivo
+
+
+existente, puedes eliminar
+un archivo existente.
+
+
+No hay visualización de cada archivo.
+
+
+PDF, Slate, lo que sea.
+No vamos a hacer esa parte en este curso.
+
